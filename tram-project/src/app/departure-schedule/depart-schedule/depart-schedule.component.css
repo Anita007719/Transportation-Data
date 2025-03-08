@@ -1,0 +1,545 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container for the page */
+body {
+  background-color: #f4f7fc;
+  color: #333;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.app-header {
+  background-color: #2b3e50;
+  color: white;
+  padding: 12px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 25px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.header-title h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-title p {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.header-title {
+  /* margin-left: 25px; */
+  position: relative;
+  left: 9%;
+}
+
+.header-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.action-btn {
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 34px;
+  padding: 6px;
+  margin: 6px;
+}
+
+.action-btn:hover {
+  background-color: #9fa2a4;
+}
+
+.header {
+  font-size: 1.8rem;
+  color: #2d3e50;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.search-bar {
+  margin: 6px;
+}
+
+.search-bar input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+}
+
+.schedule {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 625px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.schedule-item {
+  margin: 0px 5px 10px 5px;
+  width: 225px;
+}
+
+.schedule-item label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.schedule-item input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  color: #333;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-item input:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  width: 45%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+  font-size: 1.5rem;
+  color: #2d3e50;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.profile-icon img{
+  width:30px;
+  height:30px;
+  margin-top: 10px;
+}
+.card.selected {
+  background-color: #f0f8ff;
+  border: 2px solid #2980b9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.trams-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.tram-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tram-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f7f7f7;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tram-line {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+
+.card-body {
+  padding: 20px;
+  color: #555;
+}
+
+
+.departure-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.detail-value {
+  color: #666;
+  font-size: 1rem;
+}
+
+.stationHeader {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.card-body-outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.map {
+  width: 600px;
+  height: 417px;
+  margin: 10px 0 10px 20px;
+}
+
+.message-banner {
+  background-color: #fe9310;
+  color: white;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+  flex-grow: 1;
+  padding-right: 15px;
+}
+
+.app-footer {
+  background-color: #2b3e50;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  margin: 4px 0px
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-links ul li {
+  display: inline-block;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ecf0f1;
+}
+
+.footer-social {
+  flex: 1;
+  text-align: right;
+}
+
+.social-icon {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.social-icon:hover {
+  color: #ecf0f1;
+}
+
+.message{
+  margin: 2em 18px 0px
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .header-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .search-bar input {
+    width: 80%;
+    padding: 8px;
+  }
+
+  .search-bar button {
+    width: 15%;
+    padding: 8px;
+  }
+
+
+  .schedule {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .schedule-item {
+    margin-bottom: 15px;
+  }
+
+  .schedule-item input {
+    width: 100%;
+  }
+
+
+  .cards-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .map {
+    width: 100%;
+    height: 200px;
+    margin: 10px 0;
+  }
+
+  .trams-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .tram-card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .card-body-outer {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+
+}
+
+@media (max-width: 1025px) {
+  .header-container {
+    text-align: center;
+  }
+
+  .header-title h2 {
+    font-size: 2rem;
+  }
+
+  .search-bar input {
+    width: 70%;
+  }
+
+  .search-bar button {
+    width: 25%;
+  }
+
+  .schedule {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .schedule-item input {
+    width: 100%;
+  }
+
+  .cards-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .map {
+    width: 90%;
+    height: 300px;
+    margin: 20px 5px ;
+  }
+
+  .trams-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .footer-links ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+
+}
+
+@media (min-width: 1026px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .schedule {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .cards-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .map {
+    width: 45%;
+    height: 405px;
+    margin: 10px 0;
+  }
+
+  .trams-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+
+  .footer-links ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+
+}
